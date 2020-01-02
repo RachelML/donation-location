@@ -52,11 +52,11 @@ https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | HTML and page layout | H | 2hrs| 3.5hrs | 3.5hrs |
-| basic CSS styling | H | 3hrs| 2.5hrs | 2.5hrs |
+| basic CSS styling | H | 4hrs| 2.5hrs | 2.5hrs |
 | JS and working with API | H | 6hrs| 5hrs | 5hrs |
-| extra CSS styling | L | 2hrs| 3.5hrs | 3.5hrs |
+| extra CSS styling | L | 4hrs| 3.5hrs | 3.5hrs |
 | working MVPS | H | 3hrs| 2.5hrs | 2.5hrs |
-| post MVP  | H | 2hrs| 5hrs | 5hrs |
+| post MVP  | H | 6hrs| 5hrs | 5hrs |
 
 
 ## Code Snippet
