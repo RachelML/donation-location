@@ -29,6 +29,8 @@ https://res.cloudinary.com/rachelml/image/upload/v1577991379/IMG_9777_ihupfx.jpg
 
 https://res.cloudinary.com/rachelml/image/upload/v1577990329/Screen_Shot_2020-01-02_at_12.04.05_PM_m0xs7c.png
 
+data to pull: Address, borough, Vendor name, website, ntaname
+
 https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm-wvu5
 
 #### MVP 
