@@ -15,23 +15,21 @@
 
 ## Project Description
 
-An app that helps you find a near-by clothing donation centers in your borough
+An app that helps users find a near-by textile donation center in their borough. User will be able to select their borough and  type of textile to donate ( shoes, clothing, bedding etc). Using Textile Drop-Off Locations in NYC API, a location that fits users criteria will display on app. 
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+https://res.cloudinary.com/rachelml/image/upload/v1577991385/IMG_9778_uxa1i2.jpg
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  
-
+https://res.cloudinary.com/rachelml/image/upload/v1577991379/IMG_9777_ihupfx.jpg
 
 ## API Data Sample
+
+https://res.cloudinary.com/rachelml/image/upload/v1577990329/Screen_Shot_2020-01-02_at_12.04.05_PM_m0xs7c.png
+
 https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm-wvu5
-
-Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
-Screen Shot 2020-01-02 at 12.04.05 PM
-
 
 #### MVP 
 
@@ -49,16 +47,14 @@ Screen Shot 2020-01-02 at 12.04.05 PM
 - add donation center images 
 
 
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| HTML and page layout | H | 2hrs| 3.5hrs | 3.5hrs |
+| basic CSS styling | H | 3hrs| 2.5hrs | 2.5hrs |
+| JS and working with API | H | 6hrs| 5hrs | 5hrs |
+| extra CSS styling | L | 2hrs| 3.5hrs | 3.5hrs |
+| working MVPS | H | 3hrs| 2.5hrs | 2.5hrs |
+| post MVP  | H | 2hrs| 5hrs | 5hrs |
 
 
 ## Code Snippet
