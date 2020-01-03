@@ -10,9 +10,9 @@ async function findLocation(borough) {
         let findNeighborhood = await axios.get(`https://data.cityofnewyork.us/resource/qnjm-wvu5.json?ntaname=${neighborhood}`);
          
         try {
-         document.querySelector('h2').innerHTML = "address: " + findNeighborhood.data[0].address;
-         document.querySelector('h3').innerHTML = "name: " + findNeighborhood.data[0].vendor_name;
-         document.querySelector('h4').innerHTML = findNeighborhood.data[0].website;
+         document.querySelector('h2').innerHTML = "name: " + findNeighborhood.data[0].vendor_name;
+         document.querySelector('h3').innerHTML = "address: " + findNeighborhood.data[0].address;
+         document.querySelector('h4').innerHTML = "items accepted: " + findNeighborhood.data[0].items_accepted;
         
          console.log(findNeighborhood.data)
     

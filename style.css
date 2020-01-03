@@ -1,0 +1,27 @@
+* {
+
+}
+body {
+    margin-top: 100px;
+}
+header {
+    margin: 100px 0;
+}
+h1 {
+    text-align: center;
+}
+header {
+   
+    text-align: center;
+}
+.search-boro {
+    padding: 40px 0;
+}
+.search-neighborhood {
+}
+.location {
+    text-align: center;
+    background-color: plum;
+    margin: 20px;
+    border: 1px;
+}
