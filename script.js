@@ -15,7 +15,7 @@ async function findLocation(borough) {
          document.querySelector('h4').innerHTML = "items accepted: " + findNeighborhood.data[0].items_accepted;
         
          console.log(findNeighborhood.data)
-    
+         
 
         return findNeighborhood;
      } catch(err) {
@@ -23,7 +23,8 @@ async function findLocation(borough) {
         console.log(err.response)
         }
         }
-
+        
+       
         let select = document.querySelector('#neighborhood')
         //pulls neighborhood data from boro search and adds to drop down list
         let elm = document.getElementById('neighborhood')
@@ -68,6 +69,7 @@ async function findLocation(borough) {
     event.preventDefault()
     let boroData = boroInput.value
     findLocation(boroData)
+ 
 
 }
 // boro search button
