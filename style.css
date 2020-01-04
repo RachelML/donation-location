@@ -13,18 +13,19 @@ body {
 
 h1 {
     text-align: left;
-    padding-left: 30px;
+    padding-left: 90px;
 }
 
-h2 {
+a {
+    display: block;
     padding-top: 20px;
    
 }
 
 p {
     text-align: left;
-    padding-left: 30px;
-    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-bottom: 20px;
 }
 
 header {
@@ -41,7 +42,7 @@ header {
     padding-bottom: 50px;
 }
 #boro {
-    background-color: rgb(171, 195, 171); /* Green */
+    background-color: rgb(171, 195, 171); 
     border: none;
     color: white;
     text-align: center;
@@ -52,7 +53,7 @@ header {
     font-size: 16px;
 }
 button {
-    background-color: rgb(171, 195, 171); /* Green */
+    background-color: rgb(171, 195, 171); 
     border: none;
     color: white;
     padding: 5px 32px;
@@ -81,8 +82,16 @@ select {
 .nav {
 
     background-color: white;
-    padding-top: 30px;
-    margin-bottom: 30px;
+    padding-top: 10px;
+    margin-bottom: 50px;
+
+}
+
+img {
+    max-width: 10%;
+    max-height: 10%;
+    position: absolute;
+    left: 5px;
 }
 
 /* media query add nav bar with title on the left */

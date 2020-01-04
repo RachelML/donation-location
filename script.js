@@ -14,14 +14,15 @@ async function findLocation(borough) {
 
             df = document.createDocumentFragment()
             for(let i = 0; i < 100; i++){
-                let locationH2 = document.createElement('h2')
-                locationH2.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
+                let locationA = document.createElement('a')
+                locationA.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
+                locationA.href = findNeighborhood.data[i].website
                 let locationH3 = document.createElement('h3')
                 locationH3.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
                 let locationH4 = document.createElement('h4')
                 locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
                
-                df.appendChild(locationH2)
+                df.appendChild(locationA)
                 df.appendChild(locationH3)
                 df.appendChild(locationH4)
 
