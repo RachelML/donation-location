@@ -5,16 +5,18 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
 </head>
 <body>
+   <div class="nav">
     <nav>
         <h1>donation location</h1>
+        <p>find a clothing donation drop-off center in your neighborhood</p>
    </nav>
+</div>
     <header>
         <div class="container"></div>
         
-        <h5>find a nearby clothing donation drop-off center</h5>
         <div class="search-boro">
         <!-- <input type="text" name="boro" value="" placeholder="Borough" id="boro"> -->
-        <select id="boro">
+        <select id="boro" onchange='if(this.value != 0) { this.form.submit(); }'>
             <option value="">Select your borough</option>
             <option value="Brooklyn">Brooklyn</option>
             <option value="Queens">Queens</option>
@@ -23,6 +25,7 @@
             <option value="Manhattan">Manhattan</option>
 
         </select>
+        <br>
         <button id="boroButton">Search</button>
          </div>
        <br>
@@ -30,15 +33,17 @@
           <select name="neighborhood" id="neighborhood" placeholder="select neighborhood">
             <option value="">Select your neighborhood</option>
           </select>
+          <br>
         <button id="neighborhoodButton">Search</button>
         </div>
-    </header>
+    
     <div class="location">
          <h2></h2>
          <h3></h3>
          <h4></h4>
     </div>
 </div>
+</header>
     <footer>
 
     </footer>

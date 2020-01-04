@@ -35,7 +35,7 @@ https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm
 
 #### MVP 
 
-- Allow user to select type of textile to donate 
+- Allow user to select neighborhood
 - Allow user to select their borough to render a donation center in users borough 
 - Render donation center address on page 
 

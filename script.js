@@ -10,12 +10,30 @@ async function findLocation(borough) {
         let findNeighborhood = await axios.get(`https://data.cityofnewyork.us/resource/qnjm-wvu5.json?ntaname=${neighborhood}`);
          
         try {
-         document.querySelector('h2').innerHTML = "name: " + findNeighborhood.data[0].vendor_name;
-         document.querySelector('h3').innerHTML = "address: " + findNeighborhood.data[0].address;
-         document.querySelector('h4').innerHTML = "items accepted: " + findNeighborhood.data[0].items_accepted;
+            let elm = document.querySelector('.location')
+
+            df = document.createDocumentFragment()
+            for(let i = 0; i < 100; i++){
+                let locationH2 = document.createElement('h2')
+                locationH2.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
+                let locationH3 = document.createElement('h3')
+                locationH3.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
+                let locationH4 = document.createElement('h4')
+                locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
+               
+                df.appendChild(locationH2)
+                df.appendChild(locationH3)
+                df.appendChild(locationH4)
+
+
+                elm.appendChild(df)
+
+        //  document.querySelector('h2').innerHTML = "name: " + findNeighborhood.data[i].vendor_name;
+        //  document.querySelector('h3').innerHTML = "address: " + findNeighborhood.data[i].address;
+        //  document.querySelector('h4').innerHTML = "items accepted: " + findNeighborhood.data[i].items_accepted;
         
-         console.log(findNeighborhood.data)
-         
+         console.log(findNeighborhood.data[i])
+            }
 
         return findNeighborhood;
      } catch(err) {
@@ -62,7 +80,7 @@ async function findLocation(borough) {
 
 //search by borough
   let boroInput = document.querySelector('#boro')
-  let boroSubmit = document.querySelector('#boroButton')
+ let boroSubmit = document.querySelector('#boroButton')
 
 
   const updateList = function(event) {
