@@ -17,13 +17,14 @@ async function findLocation(borough) {
                 let locationA = document.createElement('a')
                 locationA.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
                 locationA.href = findNeighborhood.data[i].website
-                let locationH3 = document.createElement('h3')
-                locationH3.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
+                let locationWeb = document.createElement('a')
+                locationWeb.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
+                locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
                 let locationH4 = document.createElement('h4')
                 locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
                
                 df.appendChild(locationA)
-                df.appendChild(locationH3)
+                df.appendChild(locationWeb)
                 df.appendChild(locationH4)
 
 
@@ -80,8 +81,9 @@ async function findLocation(borough) {
 }
 
 //search by borough
-  let boroInput = document.querySelector('#boro')
+ let boroInput = document.querySelector('#boro')
  let boroSubmit = document.querySelector('#boroButton')
+
 
 
   const updateList = function(event) {
@@ -92,4 +94,4 @@ async function findLocation(borough) {
 
 }
 // boro search button
-boroSubmit.addEventListener('click', updateList)
+boroInput.addEventListener('click', updateList)

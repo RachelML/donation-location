@@ -3,21 +3,25 @@
     <title>Donation Location</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
    <div class="nav">
     <nav>
         <img src="images/Screen Shot 2020-01-04 at 12.41.45 PM.png" alt="clothing recycle">
-        <h1>donation location</h1>
-        <p>find a clothing donation drop-off center in your neighborhood</p>
+        <h1>Donation Location</h1>
    </nav>
+
 </div>
     <header>
-        <div class="container"></div>
+        <p>find a clothing donation drop-off center in your neighborhood</p>
+
+        <div class="container">
         
         <div class="search-boro">
         <!-- <input type="text" name="boro" value="" placeholder="Borough" id="boro"> -->
-        <select id="boro" onchange='if(this.value != 0) { this.form.submit(); }'>
+        <select id="boro" value="" onchange='if(this.value != 0) { this.form.submit(); }'>
             <option value="">Select your borough</option>
             <option value="Brooklyn">Brooklyn</option>
             <option value="Queens">Queens</option>
@@ -27,7 +31,7 @@
 
         </select>
         <br>
-        <button id="boroButton">Search</button>
+        <!-- <button id="boroButton">Search</button> -->
          </div>
        <br>
          <div class="search-neighborhood">
@@ -37,18 +41,29 @@
           <br>
         <button id="neighborhoodButton">Search</button>
         </div>
-    
+    </header>
+
     <div class="location">
          <h2></h2>
          <h3></h3>
          <h4></h4>
     </div>
 </div>
+</div>
 </header>
     <footer>
-
+        
     </footer>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s0enZmMGhxMGZpeTNrcWY2cmpjcmtzeCJ9.9ZcBfHb9lipPHSWXeZ1CNw';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11'
+});
+</script>
     <script src="https://unpkg.com/axios/dist/axios.min"></script>
     <script src="script.js"></script>
+
 </body>
 
