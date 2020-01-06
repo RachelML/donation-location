@@ -8,12 +8,14 @@
 }
 /* body { 
      background-image: url("images/3000591.jpg");
-    background-size: cover;
+    /* background-size: cover; */
    
-} */
+
 
 body {
-    background-color: rgb(51, 51, 78);
+    background-image: url("images/denim-stack.webp");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
 
 }
 
@@ -54,7 +56,7 @@ p {
 header {
    
     text-align: center;
-    background-color: rgb(51, 51, 78);
+    /* background-color: rgb(51, 51, 78); */
     padding-bottom: 100px;    /* display: inline-block; */
     padding-top: 200px;
 } 
@@ -113,7 +115,7 @@ select {
 }
 
 
-img {
+.img {
     max-width: 60%;
     max-height: 60%;
     position: absolute;
@@ -131,12 +133,12 @@ img {
     }
     
     p {
-        padding: 0 50px;
+        padding: 20px 30px 0 120px;
         font-size: 30px;
     }
     header {
    
-        background-color: rgb(51, 51, 78);
+        /* background-color: rgb(51, 51, 78); */
         padding-bottom: 100px;    /* display: inline-block; */
         padding-top: 200px;
         display: flex;   
@@ -178,7 +180,7 @@ img {
         font-size: 15px;
     }
     .p {
-        width: 600px;
+        width: 500px;
     }
 
   }

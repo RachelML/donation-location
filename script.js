@@ -1,4 +1,5 @@
 //https://data.cityofnewyork.us/resource/qnjm-wvu5.json
+// let addMapLocation = await axios.get(`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-73.9015,40.7358,12.78/300x200?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow`)
 
 async function findLocation(borough) {
     try {
@@ -8,24 +9,31 @@ async function findLocation(borough) {
         async function findCloseLocation(neighborhood) {
       
         let findNeighborhood = await axios.get(`https://data.cityofnewyork.us/resource/qnjm-wvu5.json?ntaname=${neighborhood}`);
-         
+        let addMapLocation = await axios.get(`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-73.9015,40.7358,12.78/300x200?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow`)
+
         try {
             let elm = document.querySelector('.location')
 
             df = document.createDocumentFragment()
-            for(let i = 0; i < 100; i++){
+            for(let i = 0; i < findNeighborhood.data.length; i++){
                 let locationA = document.createElement('a')
                 locationA.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
                 locationA.href = findNeighborhood.data[i].website
+                
                 let locationWeb = document.createElement('a')
                 locationWeb.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
                 locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
                 let locationH4 = document.createElement('h4')
                 locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
                 let mapLocation = document.createElement('div')
-                mapLocation.setAttribute("id", "map")
-                mapLocation.setAttribute("style", "width: 400px; height: 300px")
-                mapLocation.appendChild(document.createTextNode(map))
+                mapLocation.innerHTML = `
+                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/url-https%3A%2F%2Fwww.mapbox.com%2Fimg%2Frocket.png(${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude}/${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude},13/300x300?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow' />
+                `
+                console.log(mapLocation)
+                
+                
+                
+                // console.log(MapLocation)
                
                 df.appendChild(locationA)
                 df.appendChild(locationWeb)
@@ -36,15 +44,8 @@ async function findLocation(borough) {
 
                 elm.appendChild(df)
 
-                mapboxgl.accessToken = 'pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGRycWgwMGs2cDNldGV6NWFzazlhdSJ9._Zmn2QuBLEeBV9XNv6vgiA';
-                var map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/streets-v11',
-                center: [-79.4512, 43.6568],
-                zoom: 13
-                });
         
-         console.log(findNeighborhood.data[i])
+        //  console.log(findNeighborhood.data[i])
             }
 
           
@@ -97,13 +98,8 @@ async function findLocation(borough) {
  let boroSubmit = document.querySelector('#boroButton')
 
 
-
-  const updateList = function(event) {
-    event.preventDefault()
+ boroInput.addEventListener('change', (event) => {
     let boroData = boroInput.value
     findLocation(boroData)
- 
+ });
 
-}
-// boro search button
-boroInput.addEventListener('click', updateList)
