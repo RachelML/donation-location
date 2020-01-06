@@ -2,7 +2,7 @@
 <head>
     <title>Donation Location</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap" rel="stylesheet">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 </head>
@@ -10,12 +10,14 @@
    <div class="nav">
     <nav>
         <img src="images/Screen Shot 2020-01-04 at 12.41.45 PM.png" alt="clothing recycle">
-        <h1>Donation Location</h1>
+        <h1>DONATION LOCATION</h1>
    </nav>
 
 </div>
     <header>
+        <div class="p">
         <p>find a clothing donation drop-off center in your neighborhood</p>
+        </div>
 
         <div class="container">
         
@@ -54,14 +56,16 @@
     <footer>
         
     </footer>
-    <div id='map' style='width: 400px; height: 300px;'></div>
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s0enZmMGhxMGZpeTNrcWY2cmpjcmtzeCJ9.9ZcBfHb9lipPHSWXeZ1CNw';
+    <!-- <div id='map' style='width: 400px; height: 300px;'></div> -->
+<!-- <script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGRycWgwMGs2cDNldGV6NWFzazlhdSJ9._Zmn2QuBLEeBV9XNv6vgiA';
 var map = new mapboxgl.Map({
 container: 'map',
-style: 'mapbox://styles/mapbox/streets-v11'
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-79.4512, 43.6568],
+zoom: 13
 });
-</script>
+</script> -->
     <script src="https://unpkg.com/axios/dist/axios.min"></script>
     <script src="script.js"></script>
 

@@ -22,20 +22,32 @@ async function findLocation(borough) {
                 locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
                 let locationH4 = document.createElement('h4')
                 locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
+                let mapLocation = document.createElement('div')
+                mapLocation.setAttribute("id", "map")
+                mapLocation.setAttribute("style", "width: 400px; height: 300px")
+                mapLocation.appendChild(document.createTextNode(map))
                
                 df.appendChild(locationA)
                 df.appendChild(locationWeb)
                 df.appendChild(locationH4)
+                df.appendChild(mapLocation)
+
 
 
                 elm.appendChild(df)
 
-        //  document.querySelector('h2').innerHTML = "name: " + findNeighborhood.data[i].vendor_name;
-        //  document.querySelector('h3').innerHTML = "address: " + findNeighborhood.data[i].address;
-        //  document.querySelector('h4').innerHTML = "items accepted: " + findNeighborhood.data[i].items_accepted;
+                mapboxgl.accessToken = 'pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGRycWgwMGs2cDNldGV6NWFzazlhdSJ9._Zmn2QuBLEeBV9XNv6vgiA';
+                var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: [-79.4512, 43.6568],
+                zoom: 13
+                });
         
          console.log(findNeighborhood.data[i])
             }
+
+          
 
         return findNeighborhood;
      } catch(err) {
