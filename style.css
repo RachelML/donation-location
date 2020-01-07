@@ -47,10 +47,9 @@ h4 {
 }
 
 p {
-    font-size: 30px;
+    font-size: 25px;
     color: white;
-   
-    padding: 0 30px 100px 30px;
+    padding: 0 100px 80px 120px;
 }
 
 header {
@@ -99,7 +98,11 @@ select {
     font-size: 15px;
 }
 .location {
-    background-color: white;
+    background-color: lightblue;
+    
+    /* display: inline-block; */
+    margin: 0;
+
 } 
 
 .nav {
@@ -112,6 +115,11 @@ select {
 
 
     
+}
+
+.name {
+    padding-top: 50px;
+    font-size: 20px;
 }
 
 
@@ -128,9 +136,18 @@ select {
     padding: 30px;
     bottom: 0px;
 } */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
     body {
     }
+
+    .location {
+        background-color: lightblue;
+        
+        /* display: inline-block; */
+        margin: 0 100px;
+        
+    
+    } 
     
     p {
         padding: 20px 30px 0 120px;
@@ -139,7 +156,7 @@ select {
     header {
    
         /* background-color: rgb(51, 51, 78); */
-        padding-bottom: 100px;    /* display: inline-block; */
+        padding-bottom: 150px;    /* display: inline-block; */
         padding-top: 200px;
         display: flex;   
      } 
@@ -181,6 +198,16 @@ select {
     }
     .p {
         width: 500px;
+
+    }
+
+    .map {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    a h4 {
+        display: flex;
     }
 
   }

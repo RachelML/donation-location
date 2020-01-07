@@ -9,33 +9,45 @@ async function findLocation(borough) {
         async function findCloseLocation(neighborhood) {
       
         let findNeighborhood = await axios.get(`https://data.cityofnewyork.us/resource/qnjm-wvu5.json?ntaname=${neighborhood}`);
-        let addMapLocation = await axios.get(`https://api.mapbox.com/styles/v1/mapbox/light-v10/static/-73.9015,40.7358,12.78/300x200?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow`)
-
+       
         try {
+           
             let elm = document.querySelector('.location')
 
             df = document.createDocumentFragment()
             for(let i = 0; i < findNeighborhood.data.length; i++){
+
                 let locationA = document.createElement('a')
-                locationA.appendChild(document.createTextNode( "name: " + findNeighborhood.data[i].vendor_name))
+                locationA.setAttribute("class", "name")
+                locationA.setAttribute('target', '_blank')
+                locationA.appendChild(document.createTextNode( i+1 + ". " + findNeighborhood.data[i].vendor_name))
                 locationA.href = findNeighborhood.data[i].website
-                
+
+                let locationPhone = document.createElement('h4')
+                locationPhone.appendChild(document.createTextNode(findNeighborhood.data[i].public_phone))
+
                 let locationWeb = document.createElement('a')
-                locationWeb.appendChild(document.createTextNode("address: " + findNeighborhood.data[i].address))
+                locationWeb.setAttribute('target', '_blank')
+                locationWeb.appendChild(document.createTextNode(findNeighborhood.data[i].address + " " + findNeighborhood.data[i].ntaname))
                 locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
+
                 let locationH4 = document.createElement('h4')
                 locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
+
                 let mapLocation = document.createElement('div')
+                mapLocation.setAttribute("class", "map")
                 mapLocation.innerHTML = `
-                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/url-https%3A%2F%2Fwww.mapbox.com%2Fimg%2Frocket.png(${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude}/${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude},13/300x300?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow' />
+                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s(${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude}/${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude},13/300x300?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow' />
                 `
-                console.log(mapLocation)
-                
+                console.log(findNeighborhood.data[i])
+
+        
                 
                 
                 // console.log(MapLocation)
                
                 df.appendChild(locationA)
+                df.appendChild(locationPhone)
                 df.appendChild(locationWeb)
                 df.appendChild(locationH4)
                 df.appendChild(mapLocation)
