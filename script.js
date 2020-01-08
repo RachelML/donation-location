@@ -15,6 +15,10 @@ async function findLocation(borough) {
                 let elm = document.querySelector('.location')
 
                 //add search a different neighborhood button
+                let reloadButton = document.createElement('button')
+                reloadButton.innerHTML = "search a different neighborhood"
+                reloadButton.setAttribute("onClick", "window.location.reload()")
+                reloadButton.setAttribute("class", "reload-button")
 
                 df = document.createDocumentFragment()
                 for (let i = 0; i < findNeighborhood.data.length; i++) {
@@ -36,12 +40,13 @@ async function findLocation(borough) {
                     locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
 
                     let locationH4 = document.createElement('h4')
+                    locationH4.setAttribute('class', 'items')
                     locationH4.appendChild(document.createTextNode("ITEMS ACCEPTED: " + findNeighborhood.data[i].items_accepted))
 
                     let mapLocation = document.createElement('div')
                     mapLocation.setAttribute("class", "map")
                     mapLocation.innerHTML = `
-                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s(${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude}/${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude},13/300x300?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow' />
+                <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s+00CC00(${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude}/${findNeighborhood.data[i].longitude},${findNeighborhood.data[i].latitude},13/300x300?access_token=pk.eyJ1IjoicmFjaGVsbWwiLCJhIjoiY2s1MGVnZGllMGQ0azNvcXFuMTB4MHQ5YSJ9.apbYNEUgIquVm6GbWooEow' />
                 `
                     console.log(findNeighborhood.data[i])
 
@@ -55,6 +60,7 @@ async function findLocation(borough) {
                     df.appendChild(locationWeb)
                     df.appendChild(locationH4)
                     df.appendChild(mapLocation)
+                    df.appendChild(reloadButton)
 
 
 
@@ -84,7 +90,7 @@ async function findLocation(borough) {
 
         let sortedBoro = findBoro.data.sort((a, b) => a.ntaname > b.ntaname ? 1 : -1);
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < findBoro.data.length; i++) {
             let option = document.createElement('option')
             option.value = sortedBoro[i].ntaname
             option.appendChild(document.createTextNode(sortedBoro[i].ntaname))
