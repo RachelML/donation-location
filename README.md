@@ -61,12 +61,18 @@ https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm
 
 ## Code Snippet
 
+ for (let i = 0; i < 100; i++) {
+            let option = document.createElement('option')
+            option.value = sortedBoro[i].ntaname
+            option.appendChild(document.createTextNode(sortedBoro[i].ntaname))
+            df.appendChild(option)
+            elm.appendChild(df)
+
+populating a drop down menu based on users response 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+
 ```
 
 ## Change Log
