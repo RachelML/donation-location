@@ -24,15 +24,17 @@ async function findLocation(borough) {
                 locationA.href = findNeighborhood.data[i].website
 
                 let locationPhone = document.createElement('h4')
+                locationPhone.setAttribute("class", "contact")
                 locationPhone.appendChild(document.createTextNode(findNeighborhood.data[i].public_phone))
 
                 let locationWeb = document.createElement('a')
                 locationWeb.setAttribute('target', '_blank')
+
                 locationWeb.appendChild(document.createTextNode(findNeighborhood.data[i].address + " " + findNeighborhood.data[i].ntaname))
                 locationWeb.href = `http://www.google.com/maps/place/${findNeighborhood.data[i].latitude},${findNeighborhood.data[i].longitude}`
 
                 let locationH4 = document.createElement('h4')
-                locationH4.appendChild(document.createTextNode("items accepted: " + findNeighborhood.data[i].items_accepted))
+                locationH4.appendChild(document.createTextNode("ITEMS ACCEPTED: " + findNeighborhood.data[i].items_accepted))
 
                 let mapLocation = document.createElement('div')
                 mapLocation.setAttribute("class", "map")
@@ -81,6 +83,17 @@ async function findLocation(borough) {
             option.appendChild(document.createTextNode(findBoro.data[i].ntaname))
             df.appendChild(option)
             elm.appendChild(df)
+
+
+  /////removing dupicate neighborhoods
+            const options = []
+
+            document.querySelectorAll('#neighborhood > option').forEach((option) => {
+            if (options.includes(option.value)) option.remove()
+             else options.push(option.value)
+            })
+
+            
 
             
             console.log(findBoro.data[i].ntaname)
