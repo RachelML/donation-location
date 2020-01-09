@@ -14,12 +14,13 @@ async function findLocation(borough) {
 
                 let elm = document.querySelector('.location')
 
-                //add search a different neighborhood button
+                // search a different neighborhood button(reload page)
                 let reloadButton = document.createElement('button')
                 reloadButton.innerHTML = "search a different neighborhood"
                 reloadButton.setAttribute("onClick", "window.location.reload()")
                 reloadButton.setAttribute("class", "reload-button")
 
+                //append location/info and map to the DOM
                 df = document.createDocumentFragment()
                 for (let i = 0; i < findNeighborhood.data.length; i++) {
 
@@ -87,9 +88,10 @@ async function findLocation(borough) {
         df = document.createDocumentFragment()
 
         console.log(findBoro.data)
-
+        //alphabetize neighborhoods
         let sortedBoro = findBoro.data.sort((a, b) => a.ntaname > b.ntaname ? 1 : -1);
 
+        //add neighborhood to dropdown after borough selection
         for (let i = 0; i < findBoro.data.length; i++) {
             let option = document.createElement('option')
             option.value = sortedBoro[i].ntaname
@@ -112,7 +114,7 @@ async function findLocation(borough) {
             console.log(findBoro.data[i].ntaname)
         }
 
-        // dropdown search by neighborhood//////////////////////////////////////////////////////
+        // bitton search by neighborhood//////////////////////////////////////////////////////
         let neighborhoodSubmit = document.querySelector('#neighborhoodButton')
 
 
@@ -131,7 +133,7 @@ async function findLocation(borough) {
     }
 }
 
-//search by borough
+//search by borough on change 
 let boroInput = document.querySelector('#boro')
 let boroSubmit = document.querySelector('#boroButton')
 
