@@ -1,33 +1,17 @@
-# Donation Location
+# Donation Location :recycle
 
-## Project Schedule
+## API
 
-|  Day | Deliverable | Status
-|---|---| ---|
-|Jan 2rd| Project Prompt Wireframes / Priority Matrix / project approval | Incomplete
-|Jan 3rd| HTML and pseudocode | Incomplete
-|Jan 5th| code JS and pull necessary API data | Incomplete
-|Jan 6th| basic css + media query | Incomplete
-|Jan 7th| MVP + working site | Incomplete
-|Jan 8th| postMVP + additional styling | Incomplete
-|Jan 9th| Present | Incomplete
+https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm-wvu5
 
 
 ## Project Description
 
 An app that helps users find a near-by textile donation center in their borough. User will be able to select their borough and  type of textile to donate ( shoes, clothing, bedding etc). Using Textile Drop-Off Locations in NYC API, a location that fits users criteria will display on app. 
 
-## Wireframes
 
-https://res.cloudinary.com/rachelml/image/upload/v1577991385/IMG_9778_uxa1i2.jpg
-
-## Priority Matrix
-
-https://res.cloudinary.com/rachelml/image/upload/v1577991379/IMG_9777_ihupfx.jpg
 
 ## API Data Sample
-
-https://res.cloudinary.com/rachelml/image/upload/v1577990329/Screen_Shot_2020-01-02_at_12.04.05_PM_m0xs7c.png
 
 data to pull: Address, borough, Vendor name, website, ntaname
 
@@ -49,16 +33,6 @@ https://data.cityofnewyork.us/Environment/Textile-Drop-Off-Locations-in-NYC/qnjm
 - add donation center images 
 
 
-| Component | Priority | Estimated Time | Time Invested | Actual Time |
-| --- | :---: |  :---: | :---: | :---: |
-| HTML and page layout | H | 3hrs| 2hrs | 2hrs |
-| basic CSS styling | H | 4hrs| 6hrs | 6hrs |
-| JS and working with API | H | 12hrs| 8hrs | 8hrs |
-| extra CSS styling | L | 12hrs| 24hrs | 24hrs |
-| working MVPS | H | 6hrs| 8hrs | 8hrs |
-| post MVP  | H | 12hrs| 18hrs | 18hrs |
-
-
 ## Code Snippet
 
  for (let i = 0; i < 100; i++) {
@@ -72,8 +46,3 @@ populating a drop down menu based on users response
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-
-```
-
-## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
